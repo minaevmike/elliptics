@@ -6,7 +6,7 @@ Build-Depends:	cdbs,
 		cmake (>= 2.6),
 		debhelper (>= 7.0.50~),
 		eblob (>= 0.23.11),
-		blackhole-dev (= 0.2.4-1),
+		blackhole5-dev (>= 0.5),
 		libboost-dev,
 		libboost-iostreams-dev,
 		libboost-program-options-dev,
@@ -29,44 +29,44 @@ Standards-Version: 3.8.0
 Homepage: http://www.ioremap.net/projects/elliptics
 XS-Python-Version: >= 2.6
 
-Package: elliptics
+Package: elliptics-blackhole5
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, eblob (>= 0.23.11), elliptics-client (= ${Source-Version}), libcocaine-core2, handystats (>= 1.10.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, eblob (>= 0.23.11), elliptics-client-blackhole5 (= ${Source-Version}), libcocaine-core2, handystats (>= 1.10.0)
 Replaces: elliptics-2.10, srw
 Provides: elliptics-2.10
 Description: Distributed hash table storage
  Elliptics network is a fault tolerant distributed hash table object storage.
 
-Package: elliptics-client
+Package: elliptics-client-blackhole5
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, msgpack-python | python-msgpack, handystats (>= 1.10.0)
 Replaces: elliptics-2.10
 Description: Distributed hash table storage (client library)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
-Package: libcocaine-plugin-elliptics
+Package: libcocaine-plugin-elliptics-blackhole5
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, elliptics-client (= ${Source-Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, elliptics-client-blackhole5 (= ${Source-Version})
 Description: Distributed hash table storage (cocaine plugin)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
-Package: libcocaine-plugin-elliptics-dev
+Package: libcocaine-plugin-elliptics-blackhole5-dev
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, cocaine-framework-native-dev (>= 0.10.6.0)
 Description: Distributed hash table storage (cocaine plugin includes)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
-Package: elliptics-dbg
+Package: elliptics-blackhole5-dbg
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, elliptics (= ${Source-Version}) | elliptics-client (= ${Source-Version})
-Replaces: elliptics-dbg-2.10, srw-dbg
-Provides: elliptics-dbg-2.10
+Depends: ${shlibs:Depends}, ${misc:Depends}, elliptics-blackhole5 (= ${Source-Version}) | elliptics-client-blackhole5 (= ${Source-Version})
+Replaces: elliptics-blackhole5-dbg-2.10, srw-dbg
+Provides: elliptics-blackhole5-dbg-2.10
 Description: Distributed hash table storage (debug files)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
-Package: elliptics-dev
+Package: elliptics-blackhole5-dev
 Architecture: any
-Depends: elliptics-client (= ${Source-Version}), blackhole-dev (= 0.2.4-1)
+Depends: elliptics-client (= ${Source-Version}), blackhole5-dev (>= 0.5)
 Description: Distributed hash table storage (includes)
  Elliptics network is a fault tolerant distributed hash table object storage.
 
