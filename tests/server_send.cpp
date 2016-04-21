@@ -210,8 +210,8 @@ static void ssend_test_copy(session &s, const std::vector<int> &dst_groups, int 
 		}
 
 		BH_LOG(log, DNET_LOG_NOTICE, "ssend_test: %s: dst_groups: %s, copied: %d",
-				id.to_string(),
-				print_groups(dst_groups), copied);
+				id.to_string().c_str(),
+				print_groups(dst_groups).c_str(), copied);
 
 		return copied;
 	};
@@ -242,7 +242,7 @@ static void ssend_test_server_send(session &s, int num, const std::string &id_pr
 	}
 
 	BH_LOG(log, DNET_LOG_NOTICE, "%s: keys: %d, dst_groups: %s, starting copy",
-			__func__, num, print_groups(dst_groups));
+			__func__, num, print_groups(dst_groups).c_str());
 
 	//char buffer[2*DNET_ID_SIZE + 1] = {0};
 
@@ -272,7 +272,7 @@ static void ssend_test_server_send(session &s, int num, const std::string &id_pr
 	}
 
 	BH_LOG(log, DNET_LOG_NOTICE, "%s: keys: %d, dst_groups: %s, copied total: %d",
-			__func__, num, print_groups(dst_groups), copied);
+			__func__, num, print_groups(dst_groups).c_str(), copied);
 
 	BOOST_REQUIRE_EQUAL(copied, num);
 }

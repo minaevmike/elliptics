@@ -653,7 +653,7 @@ void dnet_update_backend_weight(struct dnet_net_state *st, const struct dnet_cmd
 	if (!st)
 		return;
 
-	const err = dnet_get_backend_weight(st, cmd->backend_id, ioflags, &old_weight);
+	const int err = dnet_get_backend_weight(st, cmd->backend_id, ioflags, &old_weight);
 	if (!err &&
 	    cmd->status == 0 &&
 	    cmd->size) {

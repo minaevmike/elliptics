@@ -1303,7 +1303,7 @@ struct merge_indexes_callback
 		logger &log = write_session.get_logger();
 
 		if (error) {
-			BH_LOG(log, DNET_LOG_ERROR, "%s: failed to read indexes: %s", dnet_dump_id(&id.id()), error.message());
+			BH_LOG(log, DNET_LOG_ERROR, "%s: failed to read indexes: %s", dnet_dump_id(&id.id()), error.message().c_str());
 
 			handler.complete(error);
 			return;

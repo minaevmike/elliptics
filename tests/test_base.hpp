@@ -57,9 +57,9 @@ struct test_wrapper
 
 	void operator() () const
 	{
-		BH_LOG(*logger, DNET_LOG_INFO, "Start test: %s", test_name);
+		BH_LOG(*logger, DNET_LOG_INFO, "Start test: %s", test_name.c_str());
 		test_body();
-		BH_LOG(*logger, DNET_LOG_INFO, "Finish test: %s", test_name);
+		BH_LOG(*logger, DNET_LOG_INFO, "Finish test: %s", test_name.c_str());
 	}
 };
 
